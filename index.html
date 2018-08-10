@@ -28,7 +28,10 @@
             name: 'China',
             label: {
               show: true,
-              formatter: 'constant',
+              position: 'top',
+              formatter: function () {
+                return 'SHOULD BE HELLO WORLD'
+              },
               fontWeight: 'bolder',
             },
             value: +0.14,

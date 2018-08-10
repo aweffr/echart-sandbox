@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <title>Echart - Sandbox</title>
+    <script src="lib/echarts/dist/echarts.js"></script>
+    <script src="lib/echarts/map/js/world.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+</head>
+<body>
+
+<div id="chart" style="height: 500px; width: 1000px"></div>
+
+<script type="application/javascript">
+  $(document).ready(function () {
+    console.log("Hello");
+
+    const chart = echarts.init(document.getElementById('chart'));
+
+    const option = {
+      title: {show: false},
+      geo: {
+        show: true,
+        type: 'map',
+        map: 'world',
+        regions: [
+          {
+            name: 'China',
+            label: {
+              show: true,
+              formatter: 'constant',
+              fontWeight: 'bolder',
+            },
+            value: +0.14,
+          },
+        ]
+      },
+    };
+
+    chart.setOption(option);
+
+
+  })
+</script>
+
+</body>
+</html>
